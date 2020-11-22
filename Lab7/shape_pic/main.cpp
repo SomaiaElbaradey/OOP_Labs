@@ -87,7 +87,7 @@ public:
     {
         return this->pd;
     }
-    void Draw()
+    void Draw() override
     {
         setcolor(color);
         line(pu.xPoint(),pu.yPoint(),pd.xPoint(),pd.yPoint());
@@ -117,7 +117,7 @@ public:
     {
         return this->dr;
     }
-    void Draw()
+    void Draw() override
     {
         setcolor(color);
         rectangle(ul.xPoint(),ul.yPoint(),dr.xPoint(),dr.yPoint());
@@ -157,7 +157,7 @@ public:
     {
         return this->radius;
     }
-    void Draw()
+    void Draw() override
     {
         setcolor(color);
         circle(center.xPoint(),center.yPoint(),radius);
@@ -190,7 +190,7 @@ public:
         dr=old.dr;
         color=old.color;
     }
-    void Draw()
+    void Draw() override
     {
         Line l1(ul.xPoint(),ul.yPoint(),dl.xPoint(),dl.yPoint(),color);
         Line l2(ul.xPoint(),ul.yPoint(),dr.xPoint(),dr.yPoint(),color);
