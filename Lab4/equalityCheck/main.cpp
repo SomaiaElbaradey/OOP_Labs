@@ -21,20 +21,75 @@ public:
     Stack& operator=(const Stack& right);
     Stack operator+(const Stack& right);
     void printStack();
+    //check equality
+    int operator==(Stack right)
+    {
+        int check=1;
+        if(right.tos!=tos)
+        {
+            check=0;
+        }
+        Stack temp1= right;
+        Stack temp2 = *this;
+        int temp;
+        for (int i=0; i<temp1.tos; i++)
+        {
+            for(int j=i+1; j<temp1.tos; j++)
+            {
+                if (temp1.arr[i]>temp1.arr[j])
+                {
+                    temp = temp1.arr[j];
+                    temp1.arr[j] = temp1.arr[i];
+                    temp1.arr[i] = temp;
+                }
+            }
+        }
+        int tmp;
+        for (int i=0; i<temp2.tos; i++)
+        {
+            for(int j=i+1; j<temp2.tos; j++)
+            {
+                if (temp2.arr[i]>temp2.arr[j])
+                {
+                    tmp = temp2.arr[j];
+                    temp2.arr[j] = temp2.arr[i];
+                    temp2.arr[i] = tmp;
+                }
+            }
+        }
+        for(int i=0; i<temp2.tos; i++)
+        {
+            if (temp1.arr[i]!=temp2.arr[i])
+            {
+                check=0;
+            }
+        }
+
+        return check;
+    }
 };
 int Stack::counter=0;
 
 int main()
 {
     Stack s1(3),s2(2),s3(6),s4;
-    /*
     s2.push(10);
     s2.push(20);
     s1.push(30);
     s1.push(40);
     s1.push(50);
     s4.push(30);
-    */
+    s4.push(40);
+    s4.push(50);
+    s4.push(50);
+
+    if(s1==s4)
+    {
+        cout<<"match"<<endl;
+    } else
+    {
+        cout<<"no match"<<endl;
+    }
     cout<<"number of objects: "<<Stack::getCounter()<<endl;
     return 0;
 }
