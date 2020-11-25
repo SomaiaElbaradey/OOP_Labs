@@ -64,7 +64,8 @@ public:
                 check=0;
             }
         }
-
+        delete [] temp1;
+        delete [] temp2;
         return check;
     }
 };
