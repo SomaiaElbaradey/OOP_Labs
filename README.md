@@ -2,25 +2,25 @@
 This repository contains implementations of certain exercises in OOP, in C++.
 
 ## Lab1:
-<ol>
+<ul>
 <li> Struct </li>
 <li> Pass by reference </li>
-</ol>
+</ul>
 
 ## Lab2:
-<ol>
+<ul>
 <li>Constructors</li>
 <li>Destructors</li>
-</ol>
+</ul>
 
 ## Lab3:
-<ol>
+<ul>
 <li> Stack </li>
 <li> Queue </li>
 <li> Friend Function </li>
 <li> C++ Templates </li>
 <li> C++ Static</li>
-</ol>
+</ul>
 
 ## Lab4:
 <ul>
